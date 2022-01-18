@@ -13,7 +13,7 @@ SELECT SUM(quantity) FROm order_details WHERE productid=14;
 SELECT AVG(quantity) FROM order_details WHERE productid=35;
 
 SELECT contactname FROM customers WHERE contactname LIKE 'D%';
-SELECT companyname FROM suppliers WHERE companyname LIKE '_or%';
+SELECT companyname FROM suppliers WHERE companyname LIKE 'S%_or%';
 SELECT companyname FROM customers WHERE companyname LIKE '%er';
 
 SELECT unitprice*quantity AS TotalSpent FROM order_details ORDER BY TotalSpent;
