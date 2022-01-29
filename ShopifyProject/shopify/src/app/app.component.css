@@ -1,0 +1,20 @@
+h1{
+  border: 2px solid black;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 10px black;
+    background-color: #0dcaf0;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 10px;
+  padding-right: 40px;
+  background-color: blueviolet;
+
+}
+
+nav {
+  text-align: right;
+}
+

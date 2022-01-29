@@ -1,0 +1,13 @@
+{
+
+  "development": {
+    "username": "postgres",
+    "password": "root@123",
+    "database": "proj_db",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "port": 5432
+  }
+}
+

@@ -1,0 +1,125 @@
+
+<section id="registrationPage">
+  <div class="container p-5" >
+    <div class="row mt-5">
+      <div class="col-lg-4 offset-lg-4">
+
+        <div class="card bg-light">
+          <div class="card-body">
+            <h4 class="text-center">Registration</h4>
+            <hr />
+            <form [formGroup]="form" (ngSubmit)="submit()">
+
+              <div class="form-group">
+                <label class="form-control-label">Name</label>
+                <input type="text" formControlName="name" id ="name" class="form-control" placeholder="Enter Your Name"  />
+                <div *ngIf="f['name'].touched && f['name'].invalid" class="alert alert-danger">
+              <div *ngIf="f['name'].errors && f['name'].errors['required']">Name is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-control-label">Mobile Number</label>
+        <input
+          type="mobileNo"
+          formControlName="mobileNo"
+
+          class="form-control"
+          pattern="[789][0-9]{9}"
+
+          placeholder="Enter Your Mobile Number"
+        />
+        <div *ngIf="f['mobileNo'].touched && f['mobileNo'].invalid" class="alert alert-danger">
+          <div *ngIf="f['mobileNo'].errors && f['mobileNo'].errors['required']"> Enter Mobile Number.</div>
+      </div>
+      </div>
+
+
+              <div class="form-group">
+                <label class="form-control-label">Email</label>
+                <input type="emailId" id="email" formControlName="emailId" class="form-control" placeholder="Enter Your Email Id"/>
+                <div *ngIf="f['emailId'].touched && f['emailId'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['emailId'].errors && f['emailId'].errors['required']">Email is required & @ should be present.</div>
+              </div>
+          </div>
+
+              <div class="form-group">
+                <label class="form-control-label">Password</label>
+                <input
+                  type="password"
+                  formControlName="password"
+
+                  class="form-control"
+
+                  [(ngModel)]="password"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                  placeholder="Enter Your Password"
+                />
+                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                  <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required & Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.</div>
+
+                </div>
+              </div>
+
+              <!-- <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" name="isSeller" class="form-check-input" [(ngModel)]="isSeller"> Register as Seller
+                </label>
+              </div> -->
+               <hr />
+                <!-- <input
+                type="button"
+                value="Submit"
+                class="btn btn-primary btn-block"
+
+                [disabled]="btnDisabled"
+              /> -->
+
+               <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+      &nbsp;
+    </form>
+      <a  routerLink="/login"  >Already registered? Click to Login!!</a>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- <div class="container" id="user">
+  <h1 class="text-center">Registration</h1>
+  <hr/>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+          <label for="firstName">firstName:</label>
+          <input
+              formControlName="firstName"
+              id="firstName"
+              type="text"
+              class="form-control">
+          <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger">
+              <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">firstName is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">lastName:</label>
+        <input
+            formControlName="lastName"
+            id="lastName"
+            type="text"
+            class="form-control">
+        <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
+            <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">lastName is required.</div>
+        </div>
+    </div>
+    <br>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+      &nbsp; <a href="#" routerLink="/UserList" class="btn btn-primary">Back</a>
+  </form>
+</div> -->
+ <!-- title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" -->
